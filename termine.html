@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Termine – Hölle Schmorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=20240215" />
+  <style>
+    body { opacity: 0; transition: opacity 0.3s ease-in; }
+    body.loaded { opacity: 1; }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <span>SCHMOR MIT UNS DURCH D’FÜNFTI JOHRESZIIT – <a href="mitglied-werden.html">WERD E HÖLLESCHMORER!</a></span>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="Hölle Schmorer" class="brand-logo" />
+      </a>
+      <button class="burger" aria-label="Menü" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="termine.html">Termine</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+
+  <main class="page container">
+    <div class="page-intro">
+      <h1 class="page-title">TERMINE</h1>
+      <h2 class="page-subtitle">WO WIR AUFTAUCHEN, WIRD'S LAUT, FINSTER UND HEISS.</h2>
+      <h3 class="muted-sub">HIER FINDEST DU UNSERE NÄCHSTEN TERMINE – KOMM VORBEI UND SIEH SELBST, WAS PASSIERT, WENN DIE<br>HÖLLESCHMORER LOSGELASSEN WERDEN</h3>
+    </div>
+
+    <div class="table-wrap">
+      <table class="table" id="termine-table">
+        <thead>
+          <tr><th>Datum</th><th>Event</th><th>Ort</th></tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="3" style="text-align:center;opacity:.6;">Lade Termine...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-logo-section">
+        <img src="assets/img/logo.svg" alt="Logo" class="footer-logo" />
+      </div>
+
+      <div class="footer-links">
+        <a href="ueber-uns.html" class="footer-btn">Über uns</a>
+        <a href="termine.html" class="footer-btn">Termine</a>
+        <a href="galerie.html" class="footer-btn">Galerie</a>
+        <a href="mitglied-werden.html" class="footer-btn footer-btn-highlight">Mitglied werden</a>
+        <a href="kontakt.html" class="footer-btn">Kontakt</a>
+        <a href="partner.html" class="footer-btn">Partner</a>
+      </div>
+
+      <div class="footer-legal">
+        <a href="impressum.html" class="legal-link">Impressum</a>
+        <span class="legal-separator">|</span>
+        <a href="datenschutz.html" class="legal-link">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>window.addEventListener("load",()=>document.body.classList.add("loaded"));</script>
+
+  <!-- Termine automatisch aus Google Sheets laden -->
+  <script>
+    fetch('https://opensheet.elk.sh/1tr-NKbUgGTLwTOUg3osXLBBkfa638gwRqHbu4C_LXjk/Tabellenblatt1')
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector('#termine-table tbody');
+        tbody.innerHTML = '';
+
+        if (data.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;opacity:.6;">Keine Termine vorhanden</td></tr>';
+          return;
+        }
+
+        data.sort((a, b) => new Date(a.Datum) - new Date(b.Datum));
+
+        data.forEach(t => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${t.Datum || '-'}</td>
+            <td>${t.Event || '-'}</td>
+            <td>${t.Ort || '-'}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      })
+      .catch(err => {
+        console.error('Fehler beim Laden der Termine:', err);
+        document.querySelector('#termine-table tbody').innerHTML =
+          '<tr><td colspan="3" style="text-align:center;color:red;">Fehler beim Laden der Termine</td></tr>';
+      });
+  </script>
+</body>
+</html>

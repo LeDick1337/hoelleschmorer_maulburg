@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mitglied werden – Hölle Schmorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=20240215" />
+  <style>
+    body { opacity: 0; transition: opacity 0.3s ease-in; }
+    body.loaded { opacity: 1; }
+    .join-email { display: inline; }
+    @media (max-width: 640px) {
+      .join-email {
+        display: inline-block;
+        margin-top: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>SCHMOR MIT UNS DURCH D’FÜNFTI JOHRESZIIT – <a href="mitglied-werden.html">WERD E HÖLLESCHMORER!</a></span>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="Hölle Schmorer" class="brand-logo" />
+      </a>
+      <button class="burger" aria-label="Menü" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="termine.html">Termine</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+
+  <main class="page container page-centered">
+    <div class="page-intro">
+      <h1 class="page-title">WERDE EIN HÖLLESCHMORER</h1>
+      <h2 class="page-title-alt">SCHMOR MIT UNS DURCH DIE FÜNFTE JAHRESZEIT</h2>
+      <p>Du hast keinen Bock auf langweilige Vereine mit Sitzordnung und Kaffeekränzchen?<br>
+      Dann bist du bei uns richtig: laut, wild und höllisch gut drauf.<br>
+      Wir nehmen die Fasnacht nicht nur ernst – wir treiben sie durchs Feuer.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 class="section-title">WAS DU MITBRINGEN SOLLTEST:</h3>
+    <ul class="bullet">
+      <li>Spaß an der fünften Jahreszeit</li>
+      <li>Keine Angst vor Rauch, Lärm und schrägen Gestalten</li>
+      <li>Ein Herz für Masken – und ein bisschen Wahnsinn im Blick</li>
+    </ul>
+
+    <h3 class="section-title">AKTIV ODER PASSIV – WAS HEISST DAS?</h3>
+    <div class="membership-variant">
+      <span class="variant-label variant-label--active">Aktiv:</span>
+      <p>Du läufst mit, mit deinem eigenen Fell, deiner eigenen Maske und bist mittendrin im Höllentrubel.</p>
+    </div>
+    <div class="membership-variant">
+      <span class="variant-label variant-label--passive">Passiv:</span>
+      <p>Du unterstützt uns bei Veranstaltungen, hilfst hinter den Kulissen und kannst natürlich auch mit zu Events kommen, wenn du willst.</p>
+    </div>
+
+    <h3 class="section-title">SO WIRST DU EIN HÖLLESCHMORER:</h3>
+    <p>Aktuell läuft's bei uns noch oldschool – aber dafür persönlich:<br>
+    Schick uns einfach eine E-Mail an <a class="join-email" href="mailto:hoelle-schmorerr@web.de">hoelle-schmorer@web.de</a> mit folgenden Infos:</p>
+    <ul class="bullet">
+      <li>Ein Bild von dir</li>
+      <li>Eine kurze Beschreibung deiner Person</li>
+      <li>Ob du aktiv oder passiv mitmachen willst</li>
+    </ul>
+
+    <p class="center highlight">DER WEG ZUR HÖLLE BEGINNT MIT EINER E-MAIL</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-logo-section">
+        <img src="assets/img/logo.svg" alt="Logo" class="footer-logo" />
+      </div>
+      
+      <div class="footer-links">
+        <a href="ueber-uns.html" class="footer-btn">Über uns</a>
+        <a href="termine.html" class="footer-btn">Termine</a>
+        <a href="galerie.html" class="footer-btn">Galerie</a>
+        <a href="mitglied-werden.html" class="footer-btn footer-btn-highlight">Mitglied werden</a>
+        <a href="kontakt.html" class="footer-btn">Kontakt</a>
+        <a href="partner.html" class="footer-btn">Partner</a>
+      </div>
+
+      <div class="footer-legal">
+        <a href="impressum.html" class="legal-link">Impressum</a>
+        <span class="legal-separator">|</span>
+        <a href="datenschutz.html" class="legal-link">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>window.addEventListener("load",()=>document.body.classList.add("loaded"));</script>
+</body>
+</html>

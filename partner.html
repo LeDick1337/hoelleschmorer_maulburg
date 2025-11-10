@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Partner – Hölle Schmorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=20240215" />
+  <style>
+    body { opacity: 0; transition: opacity 0.3s ease-in; }
+    body.loaded { opacity: 1; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>SCHMOR MIT UNS DURCH D’FÜNFTI JOHRESZIIT – <a href="mitglied-werden.html">WERD E HÖLLESCHMORER!</a></span>
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="Hölle Schmorer" class="brand-logo" />
+      </a>
+      <button class="burger" aria-label="Menü" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="termine.html">Termine</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay"></div>
+
+  <main class="page container">
+    <div class="page-intro">
+      <h1 class="page-title">UNSERE PARTNER</h1>
+      <h2 class="page-subtitle">AUCH DER TEUFEL BRAUCHT VERBÜNDETE</h2>
+    </div>
+
+    <div class="partners-grid">
+      <div class="partner"><img src="assets/img/logo.png" alt=""></div>
+      <div class="partner"><img src="assets/img/logo.png" alt=""></div>
+      <div class="partner"><img src="assets/img/logo.png" alt=""></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner container">
+      <div class="footer-logo-section">
+        <img src="assets/img/logo.svg" alt="Logo" class="footer-logo" />
+      </div>
+      
+      <div class="footer-links">
+        <a href="ueber-uns.html" class="footer-btn">Über uns</a>
+        <a href="termine.html" class="footer-btn">Termine</a>
+        <a href="galerie.html" class="footer-btn">Galerie</a>
+        <a href="mitglied-werden.html" class="footer-btn footer-btn-highlight">Mitglied werden</a>
+        <a href="kontakt.html" class="footer-btn">Kontakt</a>
+        <a href="partner.html" class="footer-btn">Partner</a>
+      </div>
+
+      <div class="footer-legal">
+        <a href="impressum.html" class="legal-link">Impressum</a>
+        <span class="legal-separator">|</span>
+        <a href="datenschutz.html" class="legal-link">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>window.addEventListener("load",()=>document.body.classList.add("loaded"));</script>
+</body>
+</html>
